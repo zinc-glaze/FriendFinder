@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pal Picker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Materialize CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s0 m0 l2">
+      </div>
+      <div class="col s12 m12 l8">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Survey Questions</span>
+            <br/>
+            <form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="name" type="text" class="validate">
+                  <label for="name">Name (Required)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="photo" type="text" class="validate">
+                  <label for="photo">Link to Photo Image (Required)</label>
+                </div>
+              </div>
+              <div class="row">
+                
+                <div class="input-field col s12">
+                  <h5>Question 1</h5>
+                  <h6>Your mind is always buzzing with unexplored ideas and plans</h6>
+                  <select>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Materialize JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--Initialize Materialize Selectors-->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>  
+</body>
+</html>
