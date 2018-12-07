@@ -1,14 +1,17 @@
 //Dependencies
 var express = require("express");
-var path = require("path");
 
 //Set up Express App
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 8080;
 
-//Set up Express App to handle data parsing
+//Handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Point to Routes
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 //Start server listening
 app.listen(PORT, function() {
