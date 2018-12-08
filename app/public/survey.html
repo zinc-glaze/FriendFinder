@@ -11,8 +11,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Materialize CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
+  <!--Materialize JavaScript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Initialize Materialize Select Inputs-->
+  <script>
+    $(document).ready(function() {
+       $('select').formSelect();
+    });
+ </script>
 </head>
+
 <body>
   <div class="container">
     <div class="row">
@@ -23,24 +31,24 @@
           <div class="card-content">
             <span class="card-title">Survey Questions</span>
             <br/>
-            <form>
+            <form role="form">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="name" type="text" class="validate">
-                  <label for="name">Name (Required)</label>
+                  <input id="friend-name" type="text" class="validate">
+                  <label for="friend-name">Name (Required)</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="photo" type="text" class="validate">
-                  <label for="photo">Link to Photo Image (Required)</label>
+                  <input id="friend-photo" type="text" class="validate">
+                  <label for="friend-photo">Link to Photo Image (Required)</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
                   <h5>Question 1</h5>
                   <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
-                  <select>
+                  <select id="q1">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -54,7 +62,7 @@
                 <div class="input-field col s12">
                   <h5>Question 2</h5>
                   <h6>Your mind is devoid of thoughts other than "must eat brains."</h6>
-                  <select>
+                  <select id="q2">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -68,7 +76,7 @@
                 <div class="input-field col s12">
                   <h5>Question 3</h5>
                   <h6>You find it easy to stay relaxed and focused even when there is some pressure.</h6>
-                  <select>
+                  <select id="q3">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -82,7 +90,7 @@
                 <div class="input-field col s12">
                   <h5>Question 4</h5>
                   <h6>You are a walking corpse with rotten, decaying flesh.</h6>
-                  <select>
+                  <select id="q4">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -96,7 +104,7 @@
                 <div class="input-field col s12">
                   <h5>Question 5</h5>
                   <h6>In a discussion, truth should be more important than people’s sensitivities.</h6>
-                  <select>
+                  <select id="q5">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -110,7 +118,7 @@
                 <div class="input-field col s12">
                   <h5>Question 6</h5>
                   <h6>You are driven by an unwavering desire to consume the brains of the living.</h6>
-                  <select>
+                  <select id="q6">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -124,7 +132,7 @@
                 <div class="input-field col s12">
                   <h5>Question 7</h5>
                   <h6>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h6>
-                  <select>
+                  <select id="q7">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -138,7 +146,7 @@
                 <div class="input-field col s12">
                   <h5>Question 8</h5>
                   <h6>You have no heartbeat or other vital signs.</h6>
-                  <select>
+                  <select id="q8">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -151,8 +159,8 @@
               <div class="row">
                 <div class="input-field col s12">
                   <h5>Question 9</h5>
-                  <h6>You prefer a quiet evening in with a friend to big parties with lots of people.</h6>
-                  <select>
+                  <h6>You prefer a quiet evening at home to a big party with lots of people.</h6>
+                  <select id="q9">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -166,7 +174,7 @@
                 <div class="input-field col s12">
                   <h5>Question 10</h5>
                   <h6>You prefer to travel in swarms with other undead creatures.</h6>
-                  <select>
+                  <select id="q10">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -176,6 +184,9 @@
                   </select>
                 </div>
               </div>
+              <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
             </form>
           </div>
         </div>
@@ -184,12 +195,26 @@
   </div>
 
 <!-- Materialize JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!--Initialize Materialize Selectors-->
-<script type="text/javascript">
-$(document).ready(function(){
-    $('select').formSelect();
-  });
-</script>  
+
 </body>
 </html>
+
+
+<script type="text/javascript">
+  $(".submit").on("click", function(event) {
+    event.preventDefault();
+    //SEND DATA TO SERVER
+    //Grab form elements
+    // var friendName = $("#friend-name").val().trim();
+    // console.log(friendName);
+    var newFriend = {
+      name: $("#friend-name").val().trim(),
+      photo: $("#friend-photo").val().trim(),
+      scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+    };
+
+    console.log(newFriend);
+
+    //POST to server api route??
+  });
+</script>  
