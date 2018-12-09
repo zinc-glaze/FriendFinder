@@ -31,7 +31,7 @@
           <div class="card-content">
             <span class="card-title">Survey Questions</span>
             <br/>
-            <form role="form">
+            <form role="form" id="new-friend">
               <div class="row">
                 <div class="input-field col s12">
                   <input id="friend-name" type="text" class="validate">
@@ -203,7 +203,7 @@
 <script type="text/javascript">
   $(".submit").on("click", function(event) {
     event.preventDefault();
-    //SEND DATA TO SERVER
+    
     //Grab form elements
     var newFriend = {
       name: $("#friend-name").val().trim(),
@@ -213,7 +213,41 @@
 
     console.log(newFriend);
     
+    //
+    $.ajax({ url: "/api/friends", method: "GET" })
+      .then(function(allFriends) {
+        
+        console.log(allFriends);
+        console.log("------------------------------------");
 
-    //POST to server api route??
+        //Add logic for looping through allFriends, 
+        //extracting survey scores as a temporary array,
+        //comparing tempScoresArray [i] to newFriendScores,
+        //adding differences to a variable,
+        //etc.
+
+        //Clear form 
+        // $("#friend-name").val("");
+        // $("#friend-photo").val("");
+        // $("#q1").val("null");
+        // $("#q2").val("");
+        // $("#q3").val("");
+        // $("#q4").val("");
+        // $("#q5").val("");
+        // $("#q6").val("");
+        // $("#q7").val("");
+        // $("#q8").val("");
+        // $("#q9").val("");
+        // $("#q10").val("");
+        
+        
+
+      });
+
+      //POST request to /api/friends
+      //pushes newFriend object to allFriends array
+
+    //resets form  
+    document.getElementById("new-friend").reset();
   });
 </script>  
