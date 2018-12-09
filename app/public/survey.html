@@ -205,8 +205,6 @@
     event.preventDefault();
     //SEND DATA TO SERVER
     //Grab form elements
-    // var friendName = $("#friend-name").val().trim();
-    // console.log(friendName);
     var newFriend = {
       name: $("#friend-name").val().trim(),
       photo: $("#friend-photo").val().trim(),
@@ -214,6 +212,7 @@
     };
 
     console.log(newFriend);
+    
 
     //POST to server api route??
   });
