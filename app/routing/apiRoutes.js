@@ -13,6 +13,7 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
     //responds by pushing request(form data from client) to allFriends array (server data)
     allFriends.push(req.body);
+    res.send("New friend added!");
   });
 };
 
