@@ -206,37 +206,21 @@
       scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
     };
 
-    console.log(newFriend);
     
-    //
-    $.ajax({ url: "/api/friends", method: "GET" })
-      .then(function(allFriends) {
-        
-        console.log(allFriends);
-        console.log("------------------------------------");
-
-        //Add logic for looping through allFriends, 
-        //extracting survey scores as a temporary array,
-        //comparing tempScoresArray [i] to newFriendScores,
-        //adding differences to a variable,
-        //etc.
-
-
-      });
-
     //POST request to /api/friends
     //pushes newFriend object to allFriends array  
     $.post("api/friends", newFriend,
       function (data) {
+        //console logs the best friend match sent from server
+        console.log(data);
+        //add code for modal popup using name and image from match
         if (data) {
           alert("Survey submitted!");
         }
         else {
-          alert("Enter some data fool");
+          alert("Error. Please resubmit the survey.");
         }
       });
-
-      
 
     //resets form  
     document.getElementById("new-friend").reset();
