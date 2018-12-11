@@ -18,10 +18,8 @@
   //Initalialize the Form Select and Modal Trigger for Materialize  
     $(document).ready(function() {
        $('select').formSelect();
+       $('.modal').modal();
     });
-    $(document).ready(function(){
-    $('.modal').modal();
-  });
  </script>
 </head>
 
@@ -43,13 +41,13 @@
             <form role="form" id="new-friend">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="friend-name" type="text" class="validate">
+                  <input id="friend-name" type="text" class="validate" required="">
                   <label for="friend-name">Name (Required)</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="friend-photo" type="text" class="validate">
+                  <input id="friend-photo" type="text" class="validate" required="">
                   <label for="friend-photo">Link to Photo Image (Required)</label>
                 </div>
               </div>
