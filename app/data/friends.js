@@ -3,7 +3,7 @@
 var friendsArray = [
   {
     name:"Ahmed",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjEq46NgZffAhUOA6wKHU0BBnQQjRx6BAgBEAU&url=http%3A%2F%2Fwww.printaholic.com%2F15-cool-zombie-photos%2F&psig=AOvVaw0ST_r6oTTK65QqSfcomgVe&ust=1544591286270276",
     scores:[
         3,
         1,
@@ -19,7 +19,7 @@ var friendsArray = [
   },
   {
     name:"Marty",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"http://i3.mirror.co.uk/incoming/article178020.ece/ALTERNATES/s615/adam-ant-pic-dm-154163424.jpg",
     scores:[
         5,
         1,
@@ -35,7 +35,7 @@ var friendsArray = [
   },
   {
     name:"Calliope",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    photo:"https://i.pinimg.com/originals/73/b5/af/73b5afaa1c34a29e5eca971d5e81f5b4.jpg",
     scores:[
         1,
         3,
@@ -49,6 +49,54 @@ var friendsArray = [
         3
       ]
   },
+  {
+    name:"Tomisson",
+    photo:"http://2.bp.blogspot.com/-LuwRVATGC4Q/T3u61n3BT1I/AAAAAAAADRw/OWbRM2Rjc18/s1600/zombie9b.jpg",
+    scores:[
+        3,
+        1,
+        4,
+        4,
+        5,
+        1,
+        5,
+        1,
+        1,
+        5
+      ]
+  },
+  {
+    name:"Luis",
+    photo:"https://c1.staticflickr.com/4/3084/2596483147_58d6bae3b1_b.jpg",
+    scores:[
+        1,
+        1,
+        5,
+        5,
+        1,
+        2,
+        5,
+        1,
+        4,
+        2
+      ]
+  },
+  {
+    name:"Cheryl",
+    photo:"http://1.bp.blogspot.com/-XjvdpMJbtpg/VWuLD2sYsuI/AAAAAAAAFQk/MCR4UjrCqAQ/s1600/MiekoHillman-FlightOfTheLivingDead.jpg",
+    scores:[
+        5,
+        3,
+        2,
+        5,
+        1,
+        2,
+        1,
+        5,
+        4,
+        2
+      ]
+  }
   
 ];
 
