@@ -17,10 +17,10 @@
   <script>
   //Initalialize the Form Select and Modal Trigger for Materialize  
     $(document).ready(function() {
-       $('select').formSelect();
-       $('.modal').modal();
+      $('select').formSelect();
+      $('.modal').modal();
     });
- </script>
+</script>
 </head>
 
 <body>
@@ -41,13 +41,13 @@
             <form role="form" id="new-friend">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="friend-name" type="text" class="validate" required="">
+                  <input id="friend-name" type="text" class="validate">
                   <label for="friend-name">Name (Required)</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="friend-photo" type="text" class="validate" required="">
+                  <input id="friend-photo" type="text" class="validate">
                   <label for="friend-photo">Link to Photo Image (Required)</label>
                 </div>
               </div>
@@ -186,11 +186,9 @@
                 <i class="material-icons right">send</i>
               </button>
               <div id="modal1" class="modal">
-                <div id="best-match" class="modal-content">
-                  <h4>Best Match:</h4>
-                </div>
+                <div id="best-match" class="modal-content"></div>
                 <div class="modal-footer">
-                  <a href="./home" class="modal-close red-text text-darken-2 waves-effect waves-red btn-flat">HOME</a>
+                  <a href="./survey" class="modal-close red-text text-darken-2 waves-effect waves-red btn-flat">BACK TO SURVEY</a>
                 </div>
               </div>
             </form>
@@ -206,36 +204,67 @@
   //On Submit Button Click
   $(".modal-trigger").on("click", function(event) {
     event.preventDefault();
-    
-    //Grab form values and insert into newFriend object
-    var newFriend = {
-      name: $("#friend-name").val().trim(),
-      photo: $("#friend-photo").val().trim(),
-      scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
-    };
-
-    //POST request to /api/friends
-    //pushes newFriend object to allFriends array  
-    $.post("api/friends", newFriend,
-      function (data) {
-        //console.log(data);
-        //Modal with friend match name and photo
-        if (data) {
-          
-          var bestMatch = $("#best-match");
-          var matchImage = $("<img>");
-          matchImage.attr("src", data.photo);
-          matchImage.addClass("responsive-img");
-
-          bestMatch.append($("<h3>").text(data.name));
-          bestMatch.append(matchImage);
-        }
-        else {
-          alert("Error. Please resubmit the survey.");
-        }
-      });
-
-    //resets form  
-    document.getElementById("new-friend").reset();
+    submitSurvey();
   });
+
+  //Submit Survey Function
+  function submitSurvey() {
+    //Grabs submitted values from form
+    var friendName = $("#friend-name").val().trim();
+    var friendPhoto = $("#friend-photo").val().trim();
+    var q1 = $("#q1").val();
+    var q2 = $("#q2").val();
+    var q3 = $("#q3").val();
+    var q4 = $("#q4").val();
+    var q5 = $("#q5").val();
+    var q6 = $("#q6").val();
+    var q7 = $("#q7").val();
+    var q8 = $("#q8").val();
+    var q9 = $("#q9").val();
+    var q10 = $("#q10").val();
+    
+    //If input is not valid, send error message to modal and return to the form without posting data
+    if (friendName === "" || friendPhoto === "" || q1 == null || q2 == null || q3 == null || q4 == null || q5 == null || q6 == null || q7 == null || q8 == null || q9 == null || q10 == null) {
+      var bestMatch = $("#best-match");
+      var matchText = $("<h4>Please Answer All Questions!</h4>")
+
+      bestMatch.append(matchText);
+      return;
+    }
+    else {
+      //Grab form values and insert into newFriend object
+      var newFriend = {
+        name: friendName,
+        photo: friendPhoto,
+        scores: [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
+      };
+
+      console.log(newFriend);
+
+      //POST request to /api/friends
+      //pushes newFriend object to allFriends array  
+      $.post("api/friends", newFriend,
+        function (data) {
+          //Modal with friend match name and photo
+          if (data) {
+            
+            var bestMatch = $("#best-match");
+            var matchText = $("<h4>Best Match:</h4>")
+            var matchImage = $("<img>");
+            matchImage.attr("src", data.photo);
+            matchImage.addClass("responsive-img");
+
+            bestMatch.append(matchText);
+            bestMatch.append($("<h3>").text(data.name));
+            bestMatch.append(matchImage);
+          }
+          else {
+            alert("Error. Please resubmit the survey.");
+          }
+        });
+        //resets form  
+        document.getElementById("new-friend").reset();
+      }
+    }
+
 </script>  

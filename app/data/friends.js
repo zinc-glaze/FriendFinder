@@ -2,8 +2,8 @@
 
 var friendsArray = [
   {
-    name:"Ahmed",
-    photo:"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjEq46NgZffAhUOA6wKHU0BBnQQjRx6BAgBEAU&url=http%3A%2F%2Fwww.printaholic.com%2F15-cool-zombie-photos%2F&psig=AOvVaw0ST_r6oTTK65QqSfcomgVe&ust=1544591286270276",
+    name:"Rob",
+    photo:"https://robzombie.com/favicon.ico",
     scores:[
         3,
         1,
